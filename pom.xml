@@ -19,7 +19,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>17</java.version> <!-- Use Java 17 for Spring Boot 2.7 -->
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -106,7 +106,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>klu.JobportalBackendApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
