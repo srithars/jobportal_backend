@@ -100,17 +100,19 @@
 
     </dependencies>
 
-    <build>
-        <finalName>jobportal</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>klu.JobportalBackendApplication</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <finalName>jobportal</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>klu.JobportalBackendApplication</mainClass>
+                <layout>WAR</layout>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 
 </project>
