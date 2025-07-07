@@ -1,51 +1,51 @@
 package klu.modal;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "roles")
 public class Roles {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	Long id;
-	
-	@Column(name = "role")
-	int role;
-	
-	@ManyToOne
-	@JoinColumn(name = "mid")
-	Menus menus;
 
-	public int getRole() {
-		return role;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
-	public void setRole(int role) {
-		this.role = role;
-	}
+    @Column(name = "role")
+    private int role;
 
-	public Menus getMenus() {
-		return menus;
-	}
+    @ManyToOne
+    @JoinColumn(name = "mid")
+    private Menus menus;
 
-	public void setMenus(Menus menus) {
-		this.menus = menus;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public Menus getMenus() {
+        return menus;
+    }
+
+    public void setMenus(Menus menus) {
+        this.menus = menus;
+    }
 }

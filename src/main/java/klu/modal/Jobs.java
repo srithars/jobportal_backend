@@ -1,91 +1,101 @@
 package klu.modal;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "jobs")
 public class Jobs {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	Long id;
-	
-	@Column(name = "title")
-	String title;
-	
-	@Column(name = "company")
-	String company;
-	
-	@Column(name = "location")
-	String location;
-	
-	@Column(name = "jobtype")
-	String jobtype;
-	
-	@Column(name = "salary")
-	String salary;
-	
-	@Column(name = "description")
-	String description;
 
-	public Long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column(name = "title", nullable = false)
+    private String title;
 
-	public String getTitle() {
-		return title;
-	}
+    @Column(name = "company", nullable = false)
+    private String company;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    @Column(name = "location", nullable = false)
+    private String location;
 
-	public String getCompany() {
-		return company;
-	}
+    @Column(name = "jobtype")
+    private String jobtype;
 
-	public void setCompany(String company) {
-		this.company = company;
-	}
+    @Column(name = "salary")
+    private String salary;
 
-	public String getLocation() {
-		return location;
-	}
+    @Column(name = "description", length = 2000)
+    private String description;
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
-	public String getJobtype() {
-		return jobtype;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setJobtype(String jobtype) {
-		this.jobtype = jobtype;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public String getSalary() {
-		return salary;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setSalary(String salary) {
-		this.salary = salary;
-	}
+    public String getCompany() {
+        return company;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getJobtype() {
+        return jobtype;
+    }
+
+    public void setJobtype(String jobtype) {
+        this.jobtype = jobtype;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Optional: toString for logging/debugging
+    @Override
+    public String toString() {
+        return "Jobs [id=" + id + ", title=" + title + ", company=" + company + 
+               ", location=" + location + ", jobtype=" + jobtype + 
+               ", salary=" + salary + ", description=" + description + "]";
+    }
 }
